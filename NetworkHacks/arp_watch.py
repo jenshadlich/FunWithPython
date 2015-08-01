@@ -1,8 +1,10 @@
-#!/usr/bin/python
+#! /usr/bin/env python
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
-from scapy.all import sniff, ARP
+from scapy.all import sniff, conf, ARP
 import sys
+
+conf.sniff_promisc=True
 
 ip_to_mac = {}
 
