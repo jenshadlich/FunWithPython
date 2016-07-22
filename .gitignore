@@ -1,4 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
-FunWithPython.iml
-FunWithPython.ipr
-FunWithPython.iws
+/DepViz/out
+*.iml
+*.ipr
+*.iws
+/atlassian-ide-plugin.xml

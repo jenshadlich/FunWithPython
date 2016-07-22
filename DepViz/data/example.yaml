@@ -1,0 +1,19 @@
+service 1:
+  group: default
+  dependencies:
+    - service 2
+    - service 3
+    - (db)
+
+"service 2":
+  dependencies:
+    - service 4
+    - shared db
+
+service 3:
+  dependencies:
+    - shared db
+
+service 5:
+  dependencies:
+    - (db)
