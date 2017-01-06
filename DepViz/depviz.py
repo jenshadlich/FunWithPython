@@ -97,7 +97,7 @@ def print_to_cypher(nodes, edges):
         print("CREATE ({})-[:USES]->({})".format(source, target))
 
 
-def export_to_neo4j(nodes, edges):
+def write_to_neo4j(nodes, edges):
     driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "admin"))
     session = driver.session()
     session.run("MATCH (n) DETACH DELETE n")
@@ -116,6 +116,6 @@ def export_to_neo4j(nodes, edges):
 
 nodes, edges = process()
 
-write_to_dot(nodes, edges)
+#write_to_dot(nodes, edges)
 #print_to_cypher(nodes, edges)
-#write_to_neo4j(nodes, edges)
+write_to_neo4j(nodes, edges)

@@ -9,11 +9,16 @@ service 1:
   dependencies:
     - service 4
     - shared db
+    - nfs:
+      type: infra
 
 service 3:
   dependencies:
+    - service 5
     - shared db
 
 service 5:
   dependencies:
+    - ext service:
+      type: external
     - (db)
