@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import yaml
 
@@ -44,7 +44,7 @@ def process():
                     dlabel = ''
                     dtype = ''
                     if isinstance(dep, dict):
-                        for k, v in dep.iteritems():
+                        for k, v in dep.items():
                             if v == None:
                                 dname = k
                                 dlabel = k
@@ -117,5 +117,5 @@ def write_to_neo4j(nodes, edges):
 nodes, edges = process()
 
 #write_to_dot(nodes, edges)
-#print_to_cypher(nodes, edges)
-write_to_neo4j(nodes, edges)
+print_to_cypher(nodes, edges)
+#write_to_neo4j(nodes, edges)
