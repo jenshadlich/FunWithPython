@@ -3,7 +3,7 @@
 import yaml
 
 from graphviz import Digraph
-from neo4j.v1 import GraphDatabase, basic_auth
+from neo4j import GraphDatabase, basic_auth
 
 class Node:
     def __init__(self, name, label, type, color):
@@ -117,5 +117,5 @@ def write_to_neo4j(nodes, edges):
 nodes, edges = process()
 
 #write_to_dot(nodes, edges)
-print_to_cypher(nodes, edges)
-#write_to_neo4j(nodes, edges)
+#print_to_cypher(nodes, edges)
+write_to_neo4j(nodes, edges)
